@@ -40,7 +40,6 @@ public class KampungModify {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return data;
     }
 
@@ -51,6 +50,21 @@ public class KampungModify {
             pst=conn.prepareStatement(sql);
             pst.setString(1,dk.getKode_desa_pum());
             pst.setString(2,dk.getDesa_kelurahan());
+            pst.setString(3,dk.getKecamatan());
+            pst.setString(4,dk.getKabupaten_kota());
+            pst.setString(5,dk.getProvinsi());
+            pst.setString(6,dk.getTahun_bentuk());
+
+            pst.setString(7,dk.getDasar_hukum());
+            pst.setString(8,dk.getPeta_resmi_wilayah());
+            pst.setString(9,dk.getLat());
+            pst.setString(10,dk.getLon());
+            pst.setString(11,dk.getUtara());
+            pst.setString(12,dk.getSelatan());
+            pst.setString(13,dk.getTimur());
+            pst.setString(14,dk.getBarat());
+
+            ret=pst.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }

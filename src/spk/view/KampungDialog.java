@@ -5,6 +5,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import spk.model.DataKampung;
 
 /**
  * Created by android on 11/20/17.
@@ -105,6 +106,8 @@ public class KampungDialog extends Dialog {
         button_save=(Button) getDialogPane().lookupButton(type_save);
         button_save.setOnAction(e->{
             //System.out.println("Simpan.....");
+            DataKampung dk=new DataKampung();
+            dk.setKode_desa_pum(text_pum.getText());
         });
 
         getDialogPane().setContent(grid);

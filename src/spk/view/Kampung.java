@@ -35,19 +35,6 @@ public class Kampung extends VBox {
         setStyle(new Statis().getSTYLE_BOX());
         setAlignment(Pos.TOP_CENTER);
 
-        button_tambah=new Button("Tambah");
-        button_tambah.setPrefWidth(100);
-        button_tambah.setOnAction(e->{
-            Dialog dialog=new KampungDialog();
-            dialog.showAndWait();
-        });
-
-        button_ubah=new Button("Ubah");
-        button_ubah.setPrefWidth(100);
-
-        button_hapus=new Button("Hapus");
-        button_hapus.setPrefWidth(100);
-
         ket=new Label();
 
         table=new TabelKampung();
@@ -58,5 +45,19 @@ public class Kampung extends VBox {
 
             }
         });
+
+        button_tambah=new Button("Tambah");
+        button_tambah.setPrefWidth(100);
+        button_tambah.setOnAction(e->{
+            Dialog dialog=new KampungDialog();
+            dialog.showAndWait();
+            table.setItems(new KampungModify().GetTableItem());
+        });
+
+        button_ubah=new Button("Ubah");
+        button_ubah.setPrefWidth(100);
+
+        button_hapus=new Button("Hapus");
+        button_hapus.setPrefWidth(100);
     }
 }
