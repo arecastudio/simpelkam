@@ -61,6 +61,20 @@ public class KampungDialog extends Dialog {
             tmp_id=dataKampung.getId();
             text_pum.setText(dataKampung.getKode_desa_pum());
             text_pum.setDisable(true);
+            text_desa.setText(dataKampung.getDesa_kelurahan());
+            text_camat.setText(dataKampung.getKecamatan());
+            text_kab.setText(dataKampung.getKabupaten_kota());
+            text_prov.setText(dataKampung.getProvinsi());
+
+            text_tahun.setText(dataKampung.getTahun_bentuk());
+            text_dasar_hukum.setText(dataKampung.getDasar_hukum());
+            text_peta.setText(dataKampung.getPeta_resmi_wilayah());
+            text_lat.setText(dataKampung.getLat());
+            text_lon.setText(dataKampung.getLon());
+            text_utara.setText(dataKampung.getUtara());
+            text_selatan.setText(dataKampung.getSelatan());
+            text_timur.setText(dataKampung.getTimur());
+            text_barat.setText(dataKampung.getBarat());
         }
 
         // Create the username and password labels and fields.
@@ -121,8 +135,7 @@ public class KampungDialog extends Dialog {
             if(text_pum.getText().trim().length()>0 && text_desa.getText().trim().length()>0 && text_camat.getText().trim().length()>0 && text_kab.getText().trim().length()>0 && text_prov.getText().trim().length()>0 && text_tahun.getText().trim().length()>0 && text_dasar_hukum.getText().trim().length()>0 && text_peta.getText().trim().length()>0 && text_lat.getText().trim().length()>0 && text_lon.getText().trim().length()>0 && text_utara.getText().trim().length()>0 && text_selatan.getText().trim().length()>0 && text_timur.getText().trim().length()>0 && text_barat.getText().trim().length()>0)
             {
                 DataKampung dk=new DataKampung();
-                //kode_desa_pum, desa_kelurahan, kecamatan, kabupaten_kota, provinsi, tahun_bentuk,
-                // dasar_hukum, peta_resmi_wilayah, lat, lon, utara, selatan, timur, barat
+
                 dk.setKode_desa_pum(text_pum.getText().trim());
                 dk.setDesa_kelurahan(text_desa.getText().trim());
                 dk.setKecamatan(text_camat.getText().trim());
@@ -137,12 +150,14 @@ public class KampungDialog extends Dialog {
                 dk.setSelatan(text_selatan.getText().trim());
                 dk.setTimur(text_timur.getText().trim());
                 dk.setBarat(text_barat.getText().trim());
-                int i=new KampungModify().Simpan(dk);
 
-                if (i>0){
-                    //
+                if (tmp_id!="" && dataKampung!=null){
+                    //Update
+                    dk.setId(tmp_id);
+                    new KampungModify().Ubah(dk);
                 }else{
-                    //
+                    //Insert
+                    new KampungModify().Simpan(dk);
                 }
             }
 

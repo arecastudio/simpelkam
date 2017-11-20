@@ -44,9 +44,11 @@ public class Kampung extends VBox {
         table.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
             @Override
             public void changed(ObservableValue observable, Object oldValue, Object newValue) {
-                DataKampung dk=(DataKampung)table.getSelectionModel().getSelectedItem();
-                tmp_id=dk.getId();
-                ket.setText(dk.getDesa_kelurahan());
+                if (table.getSelectionModel().getSelectedItem()!=null){
+                    DataKampung dk=(DataKampung)table.getSelectionModel().getSelectedItem();
+                    tmp_id=dk.getId();
+                    ket.setText(dk.getDesa_kelurahan());
+                }
             }
         });
 
@@ -69,6 +71,7 @@ public class Kampung extends VBox {
                 dialog.showAndWait();
 
                 //table.setItems(new KampungModify().GetTableItem());
+                Refresh();
             }
         });
 
@@ -78,5 +81,7 @@ public class Kampung extends VBox {
 
     private void Refresh(){
         table.setItems(new KampungModify().GetTableItem());
+        tmp_id="";
+        ket.setText("");
     }
 }
