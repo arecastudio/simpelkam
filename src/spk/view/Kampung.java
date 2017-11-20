@@ -10,6 +10,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import spk.ctrl.KampungModify;
 import spk.ctrl.Statis;
+import spk.model.DataKampung;
 
 import java.util.Optional;
 
@@ -17,6 +18,7 @@ public class Kampung extends VBox {
     private TableView table;
     private Button button_tambah,button_hapus,button_ubah;
     private Label ket;
+    private String tmp_id="";
 
     public Kampung() {
         Inits();
@@ -42,22 +44,39 @@ public class Kampung extends VBox {
         table.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
             @Override
             public void changed(ObservableValue observable, Object oldValue, Object newValue) {
-
+                DataKampung dk=(DataKampung)table.getSelectionModel().getSelectedItem();
+                tmp_id=dk.getId();
+                ket.setText(dk.getDesa_kelurahan());
             }
         });
 
         button_tambah=new Button("Tambah");
         button_tambah.setPrefWidth(100);
         button_tambah.setOnAction(e->{
-            Dialog dialog=new KampungDialog();
+            Dialog dialog=new KampungDialog(null);
             dialog.showAndWait();
-            table.setItems(new KampungModify().GetTableItem());
+
+            Refresh();
         });
 
         button_ubah=new Button("Ubah");
         button_ubah.setPrefWidth(100);
+        button_ubah.setOnAction(e->{
+            if (tmp_id!=""){
+                DataKampung dk=new KampungModify().GetDataKampungById(tmp_id);
+
+                Dialog dialog=new KampungDialog(dk);
+                dialog.showAndWait();
+
+                //table.setItems(new KampungModify().GetTableItem());
+            }
+        });
 
         button_hapus=new Button("Hapus");
         button_hapus.setPrefWidth(100);
+    }
+
+    private void Refresh(){
+        table.setItems(new KampungModify().GetTableItem());
     }
 }

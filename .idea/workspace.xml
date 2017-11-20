@@ -118,23 +118,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Kampung.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Kampung.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/spk/view/Kampung.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="39" column="33" lean-forward="true" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+            <state relative-caret-position="180">
+              <caret line="63" column="36" lean-forward="true" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2474#2475#0" expanded="true" />
+                <element signature="e#2540#2541#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KampungDialog.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="KampungDialog.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/spk/view/KampungDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="109" column="52" lean-forward="true" selection-start-line="109" selection-start-column="52" selection-end-line="109" selection-end-column="52" />
+            <state relative-caret-position="114">
+              <caret line="45" column="34" lean-forward="false" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -157,8 +159,8 @@
       <file leaf-file-name="KampungModify.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/spk/ctrl/KampungModify.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="632">
-              <caret line="67" column="34" lean-forward="false" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
+            <state relative-caret-position="686">
+              <caret line="46" column="41" lean-forward="false" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -208,8 +210,8 @@
         <option value="$PROJECT_DIR$/src/spk/config.properties" />
         <option value="$PROJECT_DIR$/src/spk/view/TabelKampung.java" />
         <option value="$PROJECT_DIR$/src/spk/ctrl/KampungModify.java" />
-        <option value="$PROJECT_DIR$/src/spk/view/Kampung.java" />
         <option value="$PROJECT_DIR$/src/spk/view/KampungDialog.java" />
+        <option value="$PROJECT_DIR$/src/spk/view/Kampung.java" />
       </list>
     </option>
   </component>
@@ -691,6 +693,8 @@
           <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2474#2475#0" expanded="true" />
+            <element signature="e#2540#2541#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -806,6 +810,8 @@
           <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2474#2475#0" expanded="true" />
+            <element signature="e#2540#2541#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -906,10 +912,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/spk/view/KampungDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="45" column="34" lean-forward="false" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/spk/ctrl/KampungModify.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="67" column="34" lean-forward="false" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
+        <state relative-caret-position="686">
+          <caret line="46" column="41" lean-forward="false" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -918,20 +934,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/spk/view/Kampung.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="39" column="33" lean-forward="true" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+        <state relative-caret-position="180">
+          <caret line="63" column="36" lean-forward="true" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/spk/view/KampungDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="109" column="52" lean-forward="true" selection-start-line="109" selection-start-column="52" selection-end-line="109" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2474#2475#0" expanded="true" />
+            <element signature="e#2540#2541#0" expanded="true" />
           </folding>
         </state>
       </provider>

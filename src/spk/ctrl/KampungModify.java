@@ -43,6 +43,36 @@ public class KampungModify {
         return data;
     }
 
+    public DataKampung GetDataKampungById(String id){
+        DataKampung dk=new DataKampung();
+        sql="SELECT id, kode_desa_pum, desa_kelurahan, kecamatan, kabupaten_kota, provinsi, tahun_bentuk, dasar_hukum, peta_resmi_wilayah, lat, lon, utara, selatan, timur, barat FROM pokok_desa WHERE id=? ORDER BY id ASC;";
+        try {
+            pst=conn.prepareStatement(sql);
+            pst.setString(1,id);
+            rs=pst.executeQuery();
+            if (rs.next()){
+                dk.setId(rs.getString(1));
+                dk.setKode_desa_pum(rs.getString(2));
+                dk.setDesa_kelurahan(rs.getString(3));
+                dk.setKecamatan(rs.getString(4));
+                dk.setKabupaten_kota(rs.getString(5));
+                dk.setProvinsi(rs.getString(6));
+                dk.setTahun_bentuk(rs.getString(7));
+                dk.setDasar_hukum(rs.getString(8));
+                dk.setPeta_resmi_wilayah(rs.getString(9));
+                dk.setLat(rs.getString(10));
+                dk.setLon(rs.getString(11));
+                dk.setUtara(rs.getString(12));
+                dk.setSelatan(rs.getString(13));
+                dk.setTimur(rs.getString(14));
+                dk.setBarat(rs.getString(14));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return dk;
+    }
+
     public int Simpan(DataKampung dk){
         int ret=0;
         sql="INSERT IGNORE INTO pokok_desa(kode_desa_pum, desa_kelurahan, kecamatan, kabupaten_kota, provinsi, tahun_bentuk, dasar_hukum, peta_resmi_wilayah, lat, lon, utara, selatan, timur, barat)VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";

@@ -1,10 +1,12 @@
 package spk.view;
 
+import com.sun.istack.internal.Nullable;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import spk.ctrl.KampungModify;
 import spk.model.DataKampung;
 
 /**
@@ -14,8 +16,11 @@ public class KampungDialog extends Dialog {
     private Button button_save;
     private TextField text_pum,text_desa,text_camat,text_kab,text_prov,text_tahun,text_dasar_hukum;
     private TextField text_peta,text_lat,text_lon,text_utara,text_selatan,text_timur,text_barat;
+    private DataKampung dataKampung;
+    private String tmp_id="";
 
-    public KampungDialog(){
+    public KampungDialog(@Nullable DataKampung dataKampung){
+        this.dataKampung=dataKampung;
         Inits();
         text_pum.requestFocus();
     }
@@ -51,6 +56,12 @@ public class KampungDialog extends Dialog {
         text_selatan=new TextField();
         text_timur=new TextField();
         text_barat=new TextField();
+
+        if (dataKampung!=null){
+            tmp_id=dataKampung.getId();
+            text_pum.setText(dataKampung.getKode_desa_pum());
+            text_pum.setDisable(true);
+        }
 
         // Create the username and password labels and fields.
         GridPane grid = new GridPane();
@@ -106,8 +117,35 @@ public class KampungDialog extends Dialog {
         button_save=(Button) getDialogPane().lookupButton(type_save);
         button_save.setOnAction(e->{
             //System.out.println("Simpan.....");
-            DataKampung dk=new DataKampung();
-            dk.setKode_desa_pum(text_pum.getText());
+
+            if(text_pum.getText().trim().length()>0 && text_desa.getText().trim().length()>0 && text_camat.getText().trim().length()>0 && text_kab.getText().trim().length()>0 && text_prov.getText().trim().length()>0 && text_tahun.getText().trim().length()>0 && text_dasar_hukum.getText().trim().length()>0 && text_peta.getText().trim().length()>0 && text_lat.getText().trim().length()>0 && text_lon.getText().trim().length()>0 && text_utara.getText().trim().length()>0 && text_selatan.getText().trim().length()>0 && text_timur.getText().trim().length()>0 && text_barat.getText().trim().length()>0)
+            {
+                DataKampung dk=new DataKampung();
+                //kode_desa_pum, desa_kelurahan, kecamatan, kabupaten_kota, provinsi, tahun_bentuk,
+                // dasar_hukum, peta_resmi_wilayah, lat, lon, utara, selatan, timur, barat
+                dk.setKode_desa_pum(text_pum.getText().trim());
+                dk.setDesa_kelurahan(text_desa.getText().trim());
+                dk.setKecamatan(text_camat.getText().trim());
+                dk.setKabupaten_kota(text_kab.getText().trim());
+                dk.setProvinsi(text_prov.getText().trim());
+                dk.setTahun_bentuk(text_tahun.getText().trim());
+                dk.setDasar_hukum(text_dasar_hukum.getText().trim());
+                dk.setPeta_resmi_wilayah(text_peta.getText().trim());
+                dk.setLat(text_lat.getText().trim());
+                dk.setLon(text_lon.getText().trim());
+                dk.setUtara(text_utara.getText().trim());
+                dk.setSelatan(text_selatan.getText().trim());
+                dk.setTimur(text_timur.getText().trim());
+                dk.setBarat(text_barat.getText().trim());
+                int i=new KampungModify().Simpan(dk);
+
+                if (i>0){
+                    //
+                }else{
+                    //
+                }
+            }
+
         });
 
         getDialogPane().setContent(grid);
