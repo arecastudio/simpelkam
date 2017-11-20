@@ -5,14 +5,13 @@ import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Separator;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import spk.ctrl.KampungModify;
 import spk.ctrl.Statis;
+
+import java.util.Optional;
 
 public class Kampung extends VBox {
     private TableView table;
@@ -38,6 +37,10 @@ public class Kampung extends VBox {
 
         button_tambah=new Button("Tambah");
         button_tambah.setPrefWidth(100);
+        button_tambah.setOnAction(e->{
+            Dialog dialog=new KampungDialog();
+            dialog.showAndWait();
+        });
 
         button_ubah=new Button("Ubah");
         button_ubah.setPrefWidth(100);

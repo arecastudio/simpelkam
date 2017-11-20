@@ -43,4 +43,17 @@ public class KampungModify {
 
         return data;
     }
+
+    public int Simpan(DataKampung dk){
+        int ret=0;
+        sql="INSERT IGNORE INTO pokok_desa(kode_desa_pum, desa_kelurahan, kecamatan, kabupaten_kota, provinsi, tahun_bentuk, dasar_hukum, peta_resmi_wilayah, lat, lon, utara, selatan, timur, barat)VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        try {
+            pst=conn.prepareStatement(sql);
+            pst.setString(1,dk.getKode_desa_pum());
+            pst.setString(2,dk.getDesa_kelurahan());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ret;
+    }
 }
