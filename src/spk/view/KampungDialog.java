@@ -28,7 +28,9 @@ public class KampungDialog extends Dialog {
     private void Inits() {
         // Create the custom dialog.
         setTitle("Data Kampung");
-        setHeaderText("Menambahkan Data Kampung");
+        setHeaderText("Menambah Data Kampung");
+        if (dataKampung!=null)setHeaderText("Mengubah Data Kampung");
+
         //setWidth(800);
 
         // Set the icon (must be included in the project).

@@ -77,6 +77,19 @@ public class Kampung extends VBox {
 
         button_hapus=new Button("Hapus");
         button_hapus.setPrefWidth(100);
+        button_hapus.setOnAction(e->{
+            if (tmp_id!=""){
+                Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Konfirmasi");
+                alert.setHeaderText("Hapus ["+tmp_id+"]");
+                alert.setContentText("Yakin untuk hapus data ini?");
+                Optional<ButtonType> result = alert.showAndWait();
+                if (result.get()==ButtonType.OK){
+                    new KampungModify().Hapus(tmp_id);
+                }
+                Refresh();
+            }
+        });
     }
 
     private void Refresh(){

@@ -130,4 +130,17 @@ public class KampungModify {
         }
         return ret;
     }
+
+    public int Hapus(String id){
+        int ret=0;
+        sql="DELETE FROM pokok_desa WHERE id=?";
+        try {
+            pst=conn.prepareStatement(sql);
+            pst.setInt(1,Integer.parseInt(id));
+            ret=pst.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ret;
+    }
 }

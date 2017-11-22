@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import spk.ctrl.Statis;
 import spk.view.Kampung;
 import spk.view.Login;
+import spk.view.SetUser;
 
 public class Main extends Application {
     public static Stage stage;
@@ -50,8 +51,20 @@ public class Main extends Application {
         log_out=new MenuItem("Log out");
         menuBerkas.getItems().addAll(pokok_kampung,pilih_kampung,new SeparatorMenuItem(),log_out);
 
+        Menu menuProses=new Menu("Proses");
+        penggunaan_lahan=new MenuItem("Penggunaan Lahan");
+        menuProses.getItems().addAll(penggunaan_lahan);
 
-        menuBar.getMenus().addAll(menuBerkas);
+        Menu menuReport=new Menu("Laporan");
+        rep_penggunaan_lahan=new MenuItem("Penggunaan Lahan");
+        menuReport.getItems().addAll(rep_penggunaan_lahan);
+
+        Menu menuSetting=new Menu("Pengaturan");
+        set_user=new MenuItem("Pengaturan User");
+        menuSetting.getItems().addAll(set_user);
+
+
+        menuBar.getMenus().addAll(menuBerkas,menuProses,menuReport,menuSetting);
         ClickMenu();
     }
 
@@ -63,6 +76,10 @@ public class Main extends Application {
 
         pokok_kampung.setOnAction(event -> {
             borderPane.setCenter(new Kampung());
+        });
+
+        set_user.setOnAction(e->{
+            borderPane.setCenter(new SetUser());
         });
     }
 
